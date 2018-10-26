@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$think-together-primary: mat-palette($mat-indigo, A500, A100, A700);
-$think-together-accent: mat-palette($mat-green, A500, A100, A700);
+$think-together-primary: mat-palette($mat-indigo, 500, 100, 700);
+$think-together-accent: mat-palette($mat-green, 500, 100, 700);
 
 // The warn palette is optional (defaults to red).
 $think-together-warn: mat-palette($mat-red);
