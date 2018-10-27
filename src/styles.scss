@@ -30,3 +30,7 @@ $think-together-theme: mat-light-theme($think-together-primary, $think-together-
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.elevated {
+	@include mat-elevation(2);
+}
