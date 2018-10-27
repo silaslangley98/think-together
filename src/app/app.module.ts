@@ -11,11 +11,13 @@ import { environment } from '../environments/environment';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
