@@ -11,6 +11,8 @@ import { environment } from '../environments/environment';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+
+import { FriendsModule } from './friends/friends.module';
 import { QuestionAnswerModule } from './question-answer/question-answer.module';
 
 import { NavComponent } from './nav/nav.component';
@@ -24,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
 	],
 	imports: [
 		BrowserModule,
+		FriendsModule,
 		QuestionAnswerModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
