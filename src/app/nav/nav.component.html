@@ -8,14 +8,18 @@
 
 		<mat-toolbar class="elevated">Menu</mat-toolbar>
 		<mat-nav-list>
-			<a mat-list-item href="#">Link 1</a>
-			<a mat-list-item href="#">Link 2</a>
+			<a mat-list-item [routerLink]="['/questions']" routerLinkActive="active">
+				Question/Answer
+			</a>
+			<a mat-list-item [routerLink]="['/friends']" routerLinkActive="active">
+				Friends
+			</a>
 			<a mat-list-item href="#">Link 3</a>
 		</mat-nav-list>
 	</mat-sidenav>
 
 	<mat-sidenav-content>
 		<app-header (toggledDrawer)="drawer.toggle()"></app-header>
-	<!-- Add Content Here -->
+		<router-outlet></router-outlet>
 	</mat-sidenav-content>
 </mat-sidenav-container>
