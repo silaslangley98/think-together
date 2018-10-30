@@ -7,14 +7,22 @@
 		[opened]="!(isHandset$ | async)">
 
 		<mat-toolbar class="elevated">Menu</mat-toolbar>
-		<mat-nav-list>
+		<mat-nav-list class="sidenav-menu">
+			<h3 matSubheader>Conversations</h3>
 			<a mat-list-item [routerLink]="['/questions']" routerLinkActive="active">
-				Question/Answer
+				<mat-icon mat-list-icon>question_answer</mat-icon>
+				<p>Question/Answer</p>
 			</a>
+			<mat-divider></mat-divider>
+			<h3 matSubheader>Community</h3>
 			<a mat-list-item [routerLink]="['/friends']" routerLinkActive="active">
-				Friends
+				<mat-icon mat-list-icon>people</mat-icon>
+				<p>Friends</p>
 			</a>
-			<a mat-list-item href="#">Link 3</a>
+			<a mat-list-item href="#">
+				<mat-icon mat-list-icon>description</mat-icon>
+				<p>Shared Vision</p>
+			</a>
 		</mat-nav-list>
 	</mat-sidenav>
 
