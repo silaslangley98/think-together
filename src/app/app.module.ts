@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
@@ -31,7 +31,7 @@ import { HeaderComponent } from './header/header.component';
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		AngularFireModule.initializeApp(environment.firebase),
-		AngularFireDatabaseModule,
+		AngularFirestoreModule,
 		LayoutModule,
 		MatToolbarModule,
 		MatButtonModule,
