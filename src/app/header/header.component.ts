@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	toggleDrawer():void {
+	public toggleDrawer():void {
 		this.toggledDrawer.emit();
 	}
 }

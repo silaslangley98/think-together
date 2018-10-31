@@ -9,7 +9,7 @@ import { User } from '../shared/classes/User';
 })
 
 export class NavComponent {
-	currentUser: User = {
+	public currentUser: User = {
 		id     : '1',
 		name   : 'Silas Langley',
 		avatar : 'university-triangle2.jpg',

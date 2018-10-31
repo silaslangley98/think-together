@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 	constructor(private db: AngularFirestore) {}
 
-	getAll(path): Observable<any[]> {
+	public getAll(path): Observable<any[]> {
 		return this.db.collection(path).valueChanges();
 	}
 }

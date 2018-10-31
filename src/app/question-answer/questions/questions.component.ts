@@ -12,7 +12,7 @@ import { Question } from '../shared/question';
 })
 
 export class QuestionsComponent implements OnInit {
-	questions$: Observable<Question[]>;
+	public questions$: Observable<Question[]>;
 
 	constructor(private questionService: QuestionService) { }
 
@@ -20,7 +20,7 @@ export class QuestionsComponent implements OnInit {
 		this.getQuestions();
 	}
 
-	getQuestions(): void {
+	private getQuestions(): void {
 		this.questions$ = this.questionService.getQuestions();
 	}
 }
