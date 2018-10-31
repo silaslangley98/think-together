@@ -19,4 +19,4 @@ const questionsRoutes: Routes = [
 	],
 })
 
-export class QuestionAnswerRoutingModule { };
+export class QuestionAnswerRoutingModule { }

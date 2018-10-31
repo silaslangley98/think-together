@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { ApiService } from '../../shared/services/api.service';
 
 @Injectable({
-	providedIn: 'root',
+	providedIn : 'root',
 })
 
 export class QuestionService {

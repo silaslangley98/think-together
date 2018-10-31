@@ -45,4 +45,4 @@ import { UserListItemComponent } from './shared/user-list-item/user-list-item.co
 	bootstrap: [AppComponent],
 })
 
-export class AppModule { };
+export class AppModule { }

@@ -6,9 +6,9 @@ import { QuestionService } from '../shared/question.service';
 import { Question } from '../shared/question';
 
 @Component({
-	selector: 'app-questions',
-	templateUrl: './questions.component.html',
-	styleUrls: ['./questions.component.scss'],
+	selector    : 'app-questions',
+	templateUrl : './questions.component.html',
+	styleUrls   : ['./questions.component.scss'],
 })
 
 export class QuestionsComponent implements OnInit {

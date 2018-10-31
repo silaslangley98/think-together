@@ -17,4 +17,4 @@ const friendListRoutes: Routes = [
 	],
 })
 
-export class FriendsRoutingModule { };
+export class FriendsRoutingModule { }
