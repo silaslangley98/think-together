@@ -12,6 +12,7 @@ $primary: map-get($think-together-theme, primary);
 
 .sidenav .mat-toolbar {
 	height: 100px;
+	padding: 0;
 	background-color: mat-color($primary, darker);
 	color: #fff;
 }

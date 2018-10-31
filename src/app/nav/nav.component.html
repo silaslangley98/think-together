@@ -6,7 +6,11 @@
 		[mode]="(isHandset$ | async) ? 'over' : 'side'"
 		[opened]="!(isHandset$ | async)">
 
-		<mat-toolbar class="elevated">Menu</mat-toolbar>
+		<mat-toolbar class="elevated">
+			<mat-list>
+				<app-user-list-item [user]="currentUser"></app-user-list-item>
+			</mat-list>
+		</mat-toolbar>
 		<mat-nav-list class="sidenav-menu">
 			<h3 matSubheader>Conversations</h3>
 			<a mat-list-item [routerLink]="['/questions']" routerLinkActive="active">
