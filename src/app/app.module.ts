@@ -17,14 +17,14 @@ import { QuestionAnswerModule } from './question-answer/question-answer.module';
 
 import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
-import { UserListItemComponent } from './shared/user-list-item/user-list-item.component';
+import { UserDetailsComponent } from './shared/user-details/user-details.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		NavComponent,
 		HeaderComponent,
-		UserListItemComponent,
+		UserDetailsComponent,
 	],
 	imports: [
 		BrowserModule,
