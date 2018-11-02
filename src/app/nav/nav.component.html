@@ -15,8 +15,16 @@
 		<mat-nav-list class="sidenav-menu">
 			<h3 matSubheader>Conversations</h3>
 			<a mat-list-item [routerLink]="['/questions']" routerLinkActive="active">
-				<mat-icon mat-list-icon>question_answer</mat-icon>
+				<mat-icon mat-list-icon>comment</mat-icon>
 				<p>Question/Answer</p>
+			</a>
+			<a mat-list-item [routerLink]="['/disputations']" routerLinkActive="active">
+				<mat-icon mat-list-icon>question_answer</mat-icon>
+				<p>Disputation</p>
+			</a>
+			<a mat-list-item [routerLink]="['/socratic-dialogues']" routerLinkActive="active">
+				<mat-icon mat-list-icon>sync</mat-icon>
+				<p>Socratic Dialogue</p>
 			</a>
 			<mat-divider></mat-divider>
 			<h3 matSubheader>Community</h3>
