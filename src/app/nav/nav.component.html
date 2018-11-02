@@ -7,7 +7,10 @@
 		[opened]="!(isHandset$ | async)">
 
 		<mat-toolbar class="elevated">
-			<app-user-details [user]="currentUser"></app-user-details>
+			<app-user-details
+				class="sidenav-user-details"
+				[user]="currentUser">
+			</app-user-details>
 		</mat-toolbar>
 		<mat-nav-list class="sidenav-menu">
 			<h3 matSubheader>Conversations</h3>

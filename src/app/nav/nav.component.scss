@@ -23,6 +23,10 @@ $primary: map-get($think-together-theme, primary);
 	z-index: 1;
 }
 
+.sidenav-user-details {
+	padding: 20px 10px 20px 18px;
+}
+
 .mat-nav-list > .mat-subheader {
 	height: 40px;
 	margin-top: 5px;
