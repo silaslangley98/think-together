@@ -10,9 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 import { FriendsModule } from './friends/friends.module';
+import { MaterialModule } from './material.module';
 import { QuestionAnswerModule } from './question-answer/question-answer.module';
 
 import { NavComponent } from './nav/nav.component';
@@ -35,11 +35,7 @@ import { UserDetailsComponent } from './shared/user-details/user-details.compone
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
 		LayoutModule,
-		MatToolbarModule,
-		MatButtonModule,
-		MatSidenavModule,
-		MatIconModule,
-		MatListModule,
+		MaterialModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],
