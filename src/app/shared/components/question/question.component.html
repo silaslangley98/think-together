@@ -1,0 +1,16 @@
+<div class="question-info">
+	<mat-list-item role="list-item" class="question-list-item">
+		<img
+			matListAvatar
+			class="author-avatar"
+			src="../../../assets/images/university-triangle2.jpg"
+			alt="Avatar for {{ question.author }}">
+		<h3 matLine class="question"> {{ question.question }} </h3>
+		<p matLine><span class="question-author">-- {{ question.author }}</span></p>
+	</mat-list-item>
+	<div class="question-tags">
+		<mat-chip-list>
+			<mat-chip *ngFor="let tag of question.tags">{{ tag }}</mat-chip>
+		</mat-chip-list>
+	</div>
+</div>
