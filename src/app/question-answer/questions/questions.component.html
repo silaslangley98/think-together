@@ -1,5 +1,5 @@
 <div>
-	<p *ngFor="let question of questions$ | async">
-		{{ question.question}}
-	</p>
+	<app-conversation-list>
+		<app-question *ngFor="let question of questions$ | async" [question]="question"></app-question>
+	</app-conversation-list>
 </div>
