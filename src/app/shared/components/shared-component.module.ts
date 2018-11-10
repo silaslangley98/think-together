@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../../material.module';
 
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
+import { QuestionComponent } from './question/question.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
@@ -12,7 +13,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 		FlexLayoutModule,
 		MaterialModule,
 	],
-	declarations: [ ConversationListComponent, UserDetailsComponent ],
-	exports: [ ConversationListComponent, UserDetailsComponent ],
+	declarations: [ ConversationListComponent, UserDetailsComponent, QuestionComponent ],
+	exports: [ ConversationListComponent, QuestionComponent, UserDetailsComponent ],
 })
 export class SharedModule { }
