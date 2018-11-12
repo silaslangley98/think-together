@@ -1,5 +1,9 @@
 <div>
 	<app-conversation-list>
-		<app-question *ngFor="let question of questions$ | async" [question]="question"></app-question>
+		<app-question
+			*ngFor="let question of questions$ | async; last as isLast; trackBy: trackByQuestionId"
+			[question]="question">
+			<mat-divider *ngIf="!isLast"></mat-divider>
+		</app-question>
 	</app-conversation-list>
 </div>
