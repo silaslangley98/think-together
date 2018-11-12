@@ -1,4 +1,8 @@
 .question-info {
+	.question-list-item {
+		padding-top: 15px;
+	}
+
 	.author-avatar {
 		height: 60px;
 		width: 60px;
@@ -15,6 +19,6 @@
 	}
 
 	.question-tags {
-		padding: 5px 16px;
+		padding: 5px 16px 20px;
 	}
 }
