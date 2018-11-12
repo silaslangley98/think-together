@@ -20,6 +20,10 @@ export class QuestionsComponent implements OnInit {
 		this.getQuestions();
 	}
 
+	trackByQuestionId({}, question: Question): string {
+		return question.id;
+	}
+
 	private getQuestions(): void {
 		this.questions$ = this.questionService.getQuestions();
 	}
