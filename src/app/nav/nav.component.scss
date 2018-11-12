@@ -1,6 +1,8 @@
 @import '../../styles.scss';
 
 $primary: map-get($think-together-theme, primary);
+$background: map-get($think-together-theme, background);
+$list-background: mat-color($background, hover, .1);
 
 .sidenav-container {
 	height: 100%;
@@ -35,4 +37,12 @@ $primary: map-get($think-together-theme, primary);
 
 .mat-nav-list > .mat-list-item {
 	height: 50px;
+
+	&:hover, &:focus {
+		background-color: $list-background;
+	}
+}
+
+.active {
+	background-color: $list-background;
 }
