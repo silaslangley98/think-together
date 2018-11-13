@@ -1,8 +1,16 @@
 .conversation-list {
+	position: relative;
+	overflow: visible;
 	margin: 20px auto;
 	padding: 0 16px;
 
 	.mat-list {
 		padding-top: 0;
+	}
+
+	.btn-fab-add-item {
+		position: absolute;
+		right: 5px;
+		top: 5px;
 	}
 }
