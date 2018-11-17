@@ -29,8 +29,14 @@ $think-together-theme: mat-light-theme($think-together-primary, $think-together-
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .elevated {
 	@include mat-elevation(2);
 }
+
+.material-icons.add-icon { font-weight: 900; }
