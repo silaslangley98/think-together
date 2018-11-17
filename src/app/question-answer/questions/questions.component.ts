@@ -30,6 +30,8 @@ export class QuestionsComponent implements OnInit {
 
 	openAddQuestionDialog(): void {
 		const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
+			minWidth : '250px',
+			width    : '50%',
 		});
 	}
 

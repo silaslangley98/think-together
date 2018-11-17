@@ -1,5 +1,17 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatDividerModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import {
+	MatButtonModule,
+	MatCardModule,
+	MatChipsModule,
+	MatDialogModule,
+	MatDividerModule,
+	MatFormFieldModule,
+	MatIconModule,
+	MatInputModule,
+	MatListModule,
+	MatSidenavModule,
+	MatToolbarModule
+} from '@angular/material';
 
 @NgModule({
 	imports: [],
@@ -9,7 +21,9 @@ import { MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatDiv
 		MatChipsModule,
 		MatDialogModule,
 		MatDividerModule,
+		MatFormFieldModule,
 		MatIconModule,
+		MatInputModule,
 		MatListModule,
 		MatSidenavModule,
 		MatToolbarModule,

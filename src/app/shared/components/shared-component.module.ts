@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../../material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
 import { QuestionComponent } from './question/question.component';
@@ -13,6 +14,7 @@ import AddQuestionDialogComponent from './add-question-dialog/add-question-dialo
 		CommonModule,
 		FlexLayoutModule,
 		MaterialModule,
+		ReactiveFormsModule,
 	],
 	declarations: [ AddQuestionDialogComponent, ConversationListComponent, QuestionComponent, UserDetailsComponent ],
 	exports: [ ConversationListComponent, QuestionComponent, UserDetailsComponent ],
