@@ -6,6 +6,7 @@ import { MaterialModule } from '../../material.module';
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
 import { QuestionComponent } from './question/question.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import AddQuestionDialogComponent from './add-question-dialog/add-question-dialog.component';
 
 @NgModule({
 	imports: [
@@ -13,7 +14,8 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 		FlexLayoutModule,
 		MaterialModule,
 	],
-	declarations: [ ConversationListComponent, UserDetailsComponent, QuestionComponent ],
+	declarations: [ AddQuestionDialogComponent, ConversationListComponent, QuestionComponent, UserDetailsComponent ],
 	exports: [ ConversationListComponent, QuestionComponent, UserDetailsComponent ],
+	entryComponents: [ AddQuestionDialogComponent],
 })
 export class SharedModule { }
