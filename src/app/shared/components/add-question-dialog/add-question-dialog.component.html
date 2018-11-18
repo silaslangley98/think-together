@@ -11,4 +11,13 @@
 			</mat-form-field>
 		</form>
 	</div>
+	<div mat-dialog-actions fxLayoutAlign="end">
+		<button mat-raised-button (click)="cancel()">Cancel</button>
+		<button
+			mat-raised-button
+			color="accent"
+			(click)="save()">
+			Save
+		</button>
+	</div>
 </div>
