@@ -29,6 +29,9 @@ $think-together-theme: mat-light-theme($think-together-primary, $think-together-
 $background: map-get($think-together-theme, background);
 $hover-background: mat-color($background, hover, .1);
 
+$accent: map-get($think-together-theme, accent);
+$accent-hover-background: mat-color($accent, darker);
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }

@@ -1,4 +1,4 @@
-@import '../../../..//styles.scss';
+@import '../../../../styles.scss';
 
 .add-question-dialog {
 	padding-bottom: 10px;
@@ -9,5 +9,9 @@
 
 	.btn-cancel:hover {
 		background-color: $hover-background;
+	}
+
+	.btn-save:hover {
+		background-color: $accent-hover-background;
 	}
 }
