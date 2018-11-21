@@ -12,7 +12,9 @@
 			<app-chips-autocomplete [allTags]="questionTags"></app-chips-autocomplete>
 		</div>
 		<div mat-dialog-actions fxLayoutAlign="end">
-			<button mat-raised-button (click)="cancel()">Cancel</button>
+			<button mat-raised-button class="btn-cancel" (click)="cancel()">
+				Cancel
+			</button>
 			<button
 				mat-raised-button
 				color="accent"

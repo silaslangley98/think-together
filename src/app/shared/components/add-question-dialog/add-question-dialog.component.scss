@@ -1,7 +1,13 @@
+@import '../../../..//styles.scss';
+
 .add-question-dialog {
 	padding-bottom: 10px;
 
 	.add-question-form-field {
 		width: 100%;
+	}
+
+	.btn-cancel:hover {
+		background-color: $hover-background;
 	}
 }
