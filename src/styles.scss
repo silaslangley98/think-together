@@ -26,6 +26,9 @@ $think-together-theme: mat-light-theme($think-together-primary, $think-together-
 // that you are using.
 @include angular-material-theme($think-together-theme);
 
+$background: map-get($think-together-theme, background);
+$hover-background: mat-color($background, hover, .1);
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
