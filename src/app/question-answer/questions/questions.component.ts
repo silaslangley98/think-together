@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { MatDialog } from '@angular/material';
+
+import AddQuestionDialogComponent from '../../shared/components/add-question-dialog/add-question-dialog.component';
+
 import { QuestionService } from '../shared/question.service';
 
 import { Question } from '../shared/question';
@@ -14,7 +18,7 @@ import { Question } from '../shared/question';
 export class QuestionsComponent implements OnInit {
 	public questions$: Observable<Question[]>;
 
-	constructor(private questionService: QuestionService) { }
+	constructor(public dialog: MatDialog, private questionService: QuestionService) { }
 
 	ngOnInit() {
 		this.getQuestions();
@@ -22,6 +26,13 @@ export class QuestionsComponent implements OnInit {
 
 	trackByQuestionId({}, question: Question): string {
 		return question.id;
+	}
+
+	openAddQuestionDialog(): void {
+		const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
+			minWidth : '250px',
+			width    : '50%',
+		});
 	}
 
 	private getQuestions(): void {
