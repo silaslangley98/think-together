@@ -8,6 +8,7 @@ import { ConversationListComponent } from './conversation-list/conversation-list
 import { QuestionComponent } from './question/question.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import AddQuestionDialogComponent from './add-question-dialog/add-question-dialog.component';
+import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
 
 @NgModule({
 	imports: [
@@ -16,7 +17,7 @@ import AddQuestionDialogComponent from './add-question-dialog/add-question-dialo
 		MaterialModule,
 		ReactiveFormsModule,
 	],
-	declarations: [ AddQuestionDialogComponent, ConversationListComponent, QuestionComponent, UserDetailsComponent ],
+	declarations: [ AddQuestionDialogComponent, ConversationListComponent, QuestionComponent, UserDetailsComponent, ChipsAutocompleteComponent ],
 	exports: [ ConversationListComponent, QuestionComponent, UserDetailsComponent ],
 	entryComponents: [ AddQuestionDialogComponent],
 })
