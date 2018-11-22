@@ -33,6 +33,12 @@ export class QuestionsComponent implements OnInit {
 			minWidth : '250px',
 			width    : '50%',
 		});
+
+		dialogRef.afterClosed().subscribe(question => {
+			if (question) {
+				this.questionService.addQuestion(question);
+			}
+		});
 	}
 
 	private getQuestions(): void {

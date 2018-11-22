@@ -12,4 +12,8 @@ export class ApiService {
 	public getAll(path): Observable<any[]> {
 		return this.db.collection(path).valueChanges();
 	}
+
+	public add(path: string, data: any): void {
+		this.db.collection(path).add(data);
+	}
 }
