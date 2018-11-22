@@ -9,7 +9,11 @@
 					formControlName="question">
 				<span matSuffix>?</span>
 			</mat-form-field>
-			<app-chips-autocomplete [allTags]="questionTags"></app-chips-autocomplete>
+			<app-chips-autocomplete
+				[formGroup]="addQuestionForm"
+				[allTags]="questionTags"
+				(updateTags)="selectTags($event)">
+			</app-chips-autocomplete>
 		</div>
 		<div mat-dialog-actions fxLayoutAlign="end">
 			<button mat-raised-button class="btn-cancel" (click)="cancel()">

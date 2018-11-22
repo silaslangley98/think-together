@@ -1,4 +1,4 @@
-<mat-form-field class="chips-autocomplete">
+<mat-form-field class="chips-autocomplete" [formGroup]="formGroup">
 	<mat-chip-list #chipList>
 		<mat-chip
 			*ngFor="let tag of tags"
