@@ -17,6 +17,8 @@ export class QuestionService {
 	}
 
 	public addQuestion(question): void {
+		question.createdAt = new Date().getTime();
+
 		this.api.add(this.path, question);
 	}
 }
