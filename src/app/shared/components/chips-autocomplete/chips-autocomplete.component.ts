@@ -1,6 +1,6 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete } from '@angular/material';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -13,7 +13,9 @@ import { map, startWith } from 'rxjs/operators';
 
 export class ChipsAutocompleteComponent {
 
+	@Input() formGroup: FormGroup;
 	@Input() allTags: string[];
+	@Output() updateTags = new EventEmitter<string[]>();
 
 // the following code, with minor modifications, is taken from:
 //    https://material.angular.io/components/chips/overview
@@ -54,6 +56,8 @@ export class ChipsAutocompleteComponent {
 			}
 
 			this.tagCtrl.setValue(null);
+
+			this.updateTags.emit(this.tags);
 		}
 	}
 
@@ -62,6 +66,7 @@ export class ChipsAutocompleteComponent {
 
 		if (index >= 0) {
 			this.tags.splice(index, 1);
+			this.updateTags.emit(this.tags);
 		}
  	}
 

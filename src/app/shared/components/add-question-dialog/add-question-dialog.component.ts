@@ -19,6 +19,7 @@ export default class AddQuestionDialogComponent implements OnInit {
 
 	addQuestionForm = new FormGroup({
 		question : new FormControl(''),
+		tags     : new FormControl([]),
 	});
 
 	ngOnInit() {
@@ -31,5 +32,9 @@ export default class AddQuestionDialogComponent implements OnInit {
 
 	save() {
 		this.dialogRef.close(this.addQuestionForm.value);
+	}
+
+	selectTags(selectedTags) {
+		this.addQuestionForm.value.tags = selectedTags;
 	}
 }
