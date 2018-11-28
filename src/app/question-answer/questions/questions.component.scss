@@ -1,3 +1,13 @@
+@import '../../../styles.scss';
+
+.question-link {
+	height: 122px;
+
+	&:hover {
+		background-color: $hover-background;
+	}
+}
+
 .btn-fab-add-item {
 	position: fixed;
 	right: 32px;
