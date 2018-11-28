@@ -9,6 +9,7 @@ import { AddQuestionService } from './add-question.service';
 	templateUrl : './add-question-dialog.component.html',
 	styleUrls   : ['./add-question-dialog.component.scss']
 })
+
 export default class AddQuestionDialogComponent implements OnInit {
 	public questionTags: string[];
 
