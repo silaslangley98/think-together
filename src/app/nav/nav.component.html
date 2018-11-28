@@ -7,11 +7,15 @@
 		[opened]="!(isHandset$ | async)">
 
 		<mat-toolbar class="elevated">
-			<app-user-details
+			<app-title-group
 				class="sidenav-user-details"
-				[user]="currentUser">
-			</app-user-details>
+				[avatar]="currentUser.avatar"
+				[name]="currentUser.name">
+				<span class="title-group-header">{{ currentUser.name }}</span>
+				<span class="title-group-subheader">{{ currentUser.email }}</span>
+			</app-title-group>
 		</mat-toolbar>
+
 		<mat-nav-list class="sidenav-menu">
 			<h3 matSubheader>Conversations</h3>
 			<a mat-list-item [routerLink]="['/questions']" routerLinkActive="active">

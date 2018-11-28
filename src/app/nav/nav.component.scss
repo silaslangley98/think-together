@@ -27,6 +27,16 @@ $primary: map-get($think-together-theme, primary);
 	padding: 20px 10px 20px 18px;
 }
 
+.title-group-header {
+	height: 25px;
+	font-size: 18px;
+}
+
+.title-group-subheader {
+	font-size: 12px;
+	line-height: 1.9;
+}
+
 .mat-nav-list > .mat-subheader {
 	height: 40px;
 	margin-top: 5px;

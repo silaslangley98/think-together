@@ -19,6 +19,8 @@ export class QuestionService {
 	public addQuestion(question): void {
 		question.createdAt = new Date().getTime();
 
+		question.question = question.question.replace(/\?/g,'');
+
 		this.api.add(this.path, question);
 	}
 }

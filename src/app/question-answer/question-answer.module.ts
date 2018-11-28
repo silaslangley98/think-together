@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/components/shared-component.module';
 import { QuestionAnswerRoutingModule } from './question-answer-routing.module';
 
 import { QuestionsComponent } from './questions/questions.component';
+import { QuestionDetailComponent } from './question-detail/question-detail.component';
 
 @NgModule({
 	imports: [
@@ -17,6 +18,7 @@ import { QuestionsComponent } from './questions/questions.component';
 
 	declarations: [
 		QuestionsComponent,
+		QuestionDetailComponent,
 	],
 })
 

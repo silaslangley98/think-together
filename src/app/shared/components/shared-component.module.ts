@@ -9,6 +9,7 @@ import { QuestionComponent } from './question/question.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import AddQuestionDialogComponent from './add-question-dialog/add-question-dialog.component';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
+import { TitleGroupComponent } from './title-group/title-group.component';
 
 @NgModule({
 	imports: [
@@ -17,8 +18,8 @@ import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocompl
 		MaterialModule,
 		ReactiveFormsModule,
 	],
-	declarations: [ AddQuestionDialogComponent, ConversationListComponent, QuestionComponent, UserDetailsComponent, ChipsAutocompleteComponent ],
-	exports: [ ConversationListComponent, QuestionComponent, UserDetailsComponent ],
+	declarations: [ AddQuestionDialogComponent, ConversationListComponent, QuestionComponent, UserDetailsComponent, ChipsAutocompleteComponent, TitleGroupComponent ],
+	exports: [ ConversationListComponent, QuestionComponent, TitleGroupComponent, UserDetailsComponent ],
 	entryComponents: [ AddQuestionDialogComponent],
 })
 export class SharedModule { }
