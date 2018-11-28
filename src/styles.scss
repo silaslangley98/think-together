@@ -45,4 +45,8 @@ body {
 	@include mat-elevation(2);
 }
 
+.undecorated-link {
+	text-decoration: none;
+}
+
 .material-icons.add-icon { font-weight: 900; }
