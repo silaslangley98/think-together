@@ -2,7 +2,7 @@
 	<app-conversation-list>
 		<mat-nav-list>
 			<a mat-list-item class="question-link undecorated-link"
-				href=""
+				routerLink="question/{{question.id}}"
 				(click)="selectQuestion(question)"
 				*ngFor="let question of questions$ | async; last as isLast; trackBy: trackByQuestionId">
 				<app-question [question]="question">
