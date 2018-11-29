@@ -28,6 +28,10 @@ export class QuestionsComponent implements OnInit {
 		return question.id;
 	}
 
+	selectQuestion(question):void {
+		this.questionService.selectQuestion(question);
+	}
+
 	openAddQuestionDialog(): void {
 		const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
 			minWidth : '250px',
