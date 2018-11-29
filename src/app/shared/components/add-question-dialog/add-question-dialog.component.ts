@@ -10,7 +10,7 @@ import { AddQuestionService } from './add-question.service';
 	styleUrls   : ['./add-question-dialog.component.scss']
 })
 
-export default class AddQuestionDialogComponent implements OnInit {
+export class AddQuestionDialogComponent implements OnInit {
 	public questionTags: string[];
 
 	constructor(

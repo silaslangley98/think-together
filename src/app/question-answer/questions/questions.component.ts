@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { MatDialog } from '@angular/material';
 
-import AddQuestionDialogComponent from '../../shared/components/add-question-dialog/add-question-dialog.component';
+import { AddQuestionDialogComponent } from '../../shared/components/add-question-dialog/add-question-dialog.component';
 
 import { QuestionService } from '../shared/question.service';
 
