@@ -15,6 +15,10 @@ export class QuestionService {
 
 	constructor(private api: ApiService) { }
 
+	public getQuestion(): Question {
+		return this.question;
+	}
+
 	public getQuestions(): Observable<any> {
 		return this.api.getAll(this.path);
 	}
