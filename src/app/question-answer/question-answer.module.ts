@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/components/shared-component.module';
 
@@ -11,6 +12,7 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
 @NgModule({
 	imports: [
 		CommonModule,
+		FlexLayoutModule,
 		MaterialModule,
 		SharedModule,
 		QuestionAnswerRoutingModule,
