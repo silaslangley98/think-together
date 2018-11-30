@@ -27,7 +27,10 @@ $think-together-theme: mat-light-theme($think-together-primary, $think-together-
 @include angular-material-theme($think-together-theme);
 
 $background: map-get($think-together-theme, background);
+$foreground: map-get($think-together-theme, foreground);
 $hover-background: mat-color($background, hover, .1);
+$text-color: mat-color($foreground, text);
+$text-color-lighter: mat-color($foreground, text, .6);
 
 $accent: map-get($think-together-theme, accent);
 $accent-hover-background: mat-color($accent, darker);
