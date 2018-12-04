@@ -36,4 +36,8 @@ export class QuestionDetailComponent implements OnInit {
 	trackByAnswerId({}, answer: any): string {
 		return answer.id;
 	}
+
+	addAnswer(message: string) {
+		this.answerService.addAnswer(message, this.question.id);
+	}
 }
