@@ -18,6 +18,15 @@ export class AnswerService {
 			value : question_id,
 		};
 
-		return this.api.getAll(this.path, filter);
+		return this.api.getAll(this.path, filter)
+			.pipe(map(answers => answers.sort(this.sortByPostedDate)));
+	}
+
+	private sortByPostedDate(first, second) {
+		if (first.posted < second.posted) return -1;
+
+		if (first.posted > second.posted) return 1;
+
+		return 0;
 	}
 }
