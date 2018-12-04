@@ -13,14 +13,14 @@ export class QuestionService {
 	path: string = '/questions';
 	question: Question;
 
-	constructor(private api: ApiService) { }
+	constructor(private api: ApiService) {}
 
 	public getQuestion(): Question {
 		return this.question;
 	}
 
 	public getQuestions(): Observable<any> {
-		return this.api.getAll(this.path);
+		return this.api.getAll(this.path, null);
 	}
 
 	public selectQuestion(question): void {
