@@ -10,8 +10,12 @@ import { map } from 'rxjs/operators';
 export class ApiService {
 	constructor(private db: AngularFirestore) {}
 
-	public getAll(path): Observable<any[]> {
-		return this.db.collection(path).snapshotChanges()
+	public getAll(path, filter): Observable<any[]> {
+		const query = this.db.collection(path, ref =>
+			filter ? ref.where(filter.key, '==', filter.value) : ref
+		);
+
+		return query.snapshotChanges()
 			.pipe(map(this.assignIdsToEntries));
 	}
 
