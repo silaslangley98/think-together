@@ -3,17 +3,28 @@ import { Observable } from 'rxjs';
 
 import { ApiService } from '../../shared/services/api.service';
 
+import { Question } from './question';
+
 @Injectable({
 	providedIn : 'root',
 })
 
 export class QuestionService {
 	path: string = '/questions';
+	question: Question;
 
-	constructor(private api: ApiService) { }
+	constructor(private api: ApiService) {}
+
+	public getQuestion(): Question {
+		return this.question;
+	}
 
 	public getQuestions(): Observable<any> {
-		return this.api.getAll(this.path);
+		return this.api.getAll(this.path, null);
+	}
+
+	public selectQuestion(question): void {
+		this.question = question;
 	}
 
 	public addQuestion(question): void {

@@ -1,15 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { QuestionService } from '../shared/question.service';
+import { AnswerService } from '../shared/answer.service';
+
+import { Question } from '../shared/question';
 
 @Component({
-  selector: 'app-question-detail',
-  templateUrl: './question-detail.component.html',
-  styleUrls: ['./question-detail.component.scss']
+	selector: 'app-question-detail',
+	templateUrl: './question-detail.component.html',
+	styleUrls: ['./question-detail.component.scss']
 })
 export class QuestionDetailComponent implements OnInit {
+	question: Question;
+	public answers$: Observable<any[]>;
 
-  constructor() { }
+	constructor(
+		private questionService: QuestionService,
+		private answerService: AnswerService,
+	) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.getQuestion();
+		this.getAnswers();
+	}
 
+	getQuestion():void {
+		this.question = this.questionService.getQuestion();
+	}
+
+	getAnswers():void {
+		this.answers$ = this.answerService.getAnswers(this.question.id);
+	}
+
+	trackByAnswerId({}, answer: any): string {
+		return answer.id;
+	}
 }

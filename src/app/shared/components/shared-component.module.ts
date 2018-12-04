@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ConversationListComponent } from './conversation-list/conversation-list.component';
 import { QuestionComponent } from './question/question.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import AddQuestionDialogComponent from './add-question-dialog/add-question-dialog.component';
+import { AddQuestionDialogComponent } from './add-question-dialog/add-question-dialog.component';
 import { ChipsAutocompleteComponent } from './chips-autocomplete/chips-autocomplete.component';
 import { TitleGroupComponent } from './title-group/title-group.component';
 
