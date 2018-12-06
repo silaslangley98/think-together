@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { UsersService } from '../shared/services/users.service';
 
 import { User } from '../shared/classes/User';
 
@@ -8,13 +10,12 @@ import { User } from '../shared/classes/User';
 	styleUrls: ['./nav.component.scss'],
 })
 
-export class NavComponent {
-	public currentUser: User = {
-		id     : '1',
-		name   : 'Silas Langley',
-		avatar : 'university-triangle2.jpg',
-		email  : 'silaslangley@somewhere.com',
-	};
+export class NavComponent implements OnInit {
+	public currentUser: User;
 
-	constructor() {}
+	constructor(private users: UsersService) {}
+
+	ngOnInit() {
+		this.currentUser = this.users.getCurrentUser();
+	}
 }
