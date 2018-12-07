@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ApiService } from '../../shared/services/api.service';
+import { UsersService } from '../../shared/services/users.service';
 import { UtilsService } from '../../shared/services/utils.service';
 
 import { Answer } from '../shared/Answer';
@@ -15,7 +16,11 @@ export class AnswerService {
 	path: string = '/answers';
 	answer: Answer;
 
-	constructor(private api: ApiService, private utils: UtilsService) { }
+	constructor(
+		private api: ApiService,
+		private utils: UtilsService,
+		private users: UsersService,
+	) { }
 
 	public getAnswers(question_id): Observable<any> {
 		const filter = {
@@ -31,6 +36,7 @@ export class AnswerService {
 		this.answer = {
 			message,
 			question_id,
+			author : this.users.getCurrentUser().name,
 			posted : new Date().getTime(),
 			slug   : this.utils.generateSlug(),
 		};
