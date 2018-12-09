@@ -10,8 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
 import { LayoutModule } from '@angular/cdk/layout';
-
-import { FriendsModule } from './friends/friends.module';
 import { MaterialModule } from './material.module';
 import { QuestionAnswerModule } from './question-answer/question-answer.module';
 import { SharedModule } from './shared/components/shared-component.module';
@@ -27,7 +25,6 @@ import { HeaderComponent } from './header/header.component';
 	],
 	imports: [
 		BrowserModule,
-		FriendsModule,
 		QuestionAnswerModule,
 		SharedModule,
 		AppRoutingModule,
