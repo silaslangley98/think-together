@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FriendListComponent }   from './friend-list/friend-list.component';
 
 const friendListRoutes: Routes = [
-	{ path: 'friends',  component: FriendListComponent },
+	{ path: '',  component: FriendListComponent },
 ];
 
 @NgModule({
