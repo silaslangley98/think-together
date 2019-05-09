@@ -53,3 +53,11 @@ body {
 }
 
 .material-icons.add-icon { font-weight: 900; }
+
+.btn-submit:hover {
+	background-color: $accent-hover-background;
+}
+
+.btn-cancel:hover {
+	background-color: $hover-background;
+}
