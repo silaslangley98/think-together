@@ -1,0 +1,56 @@
+@import '../../styles.scss';
+
+$primary: map-get($think-together-theme, primary);
+
+.sidenav-container {
+	height: 100%;
+}
+
+.sidenav {
+	width: 300px;
+}
+
+.sidenav .mat-toolbar {
+	height: 100px;
+	padding: 0;
+	background-color: mat-color($primary, darker);
+	color: #fff;
+}
+
+.mat-toolbar.mat-primary {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.sidenav-user-details {
+	padding: 20px 10px 20px 18px;
+}
+
+.title-group-header {
+	height: 25px;
+	font-size: 18px;
+}
+
+.title-group-subheader {
+	font-size: 12px;
+	line-height: 1.9;
+}
+
+.mat-nav-list > .mat-subheader {
+	height: 40px;
+	margin-top: 5px;
+	font-size: 1.1rem;
+}
+
+.mat-nav-list > .mat-list-item {
+	height: 50px;
+
+	&:hover, &:focus {
+		background-color: $hover-background;
+	}
+}
+
+.active {
+	background-color: $hover-background;
+}

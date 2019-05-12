@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+	<mat-sidenav #drawer
+		class="sidenav"
+		fixedInViewport="true"
+		[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+		[mode]="(isHandset$ | async) ? 'over' : 'side'"
+		[opened]="!(isHandset$ | async)">
+
+		<mat-toolbar class="elevated">
+			<app-title-group
+				class="sidenav-user-details"
+				[avatar]="currentUser.avatar"
+				[name]="currentUser.name">
+				<span class="title-group-header">{{ currentUser.name }}</span>
+				<span class="title-group-subheader">{{ currentUser.email }}</span>
+			</app-title-group>
+		</mat-toolbar>
+
+		<mat-nav-list class="sidenav-menu">
+			<h3 matSubheader>Conversations</h3>
+			<a mat-list-item [routerLink]="['/questions']" routerLinkActive="active">
+				<mat-icon mat-list-icon>comment</mat-icon>
+				<p>Question/Answer</p>
+			</a>
+			<a mat-list-item [routerLink]="['/disputations']" routerLinkActive="active">
+				<mat-icon mat-list-icon>question_answer</mat-icon>
+				<p>Disputation</p>
+			</a>
+			<a mat-list-item [routerLink]="['/socratic-dialogues']" routerLinkActive="active">
+				<mat-icon mat-list-icon>sync</mat-icon>
+				<p>Socratic Dialogue</p>
+			</a>
+			<mat-divider></mat-divider>
+			<h3 matSubheader>Community</h3>
+			<a mat-list-item [routerLink]="['/friends']" routerLinkActive="active">
+				<mat-icon mat-list-icon>people</mat-icon>
+				<p>Friends</p>
+			</a>
+			<a mat-list-item href="#">
+				<mat-icon mat-list-icon>description</mat-icon>
+				<p>Shared Vision</p>
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+		<app-header (toggledDrawer)="drawer.toggle()"></app-header>
+		<router-outlet></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>
