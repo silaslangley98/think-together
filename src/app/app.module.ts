@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
@@ -36,7 +38,7 @@ import { HeaderComponent } from './header/header.component';
 		LayoutModule,
 		MaterialModule,
 	],
-	providers: [],
+	providers: [AngularFireAuth],
 	bootstrap: [AppComponent],
 })
 
