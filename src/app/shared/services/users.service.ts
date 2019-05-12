@@ -25,6 +25,15 @@ export class UsersService {
 		return this.currentUser;
 	}
 
+	setCurrentUser(user) {
+		this.currentUser = {
+			id     : user.uid,
+			name   : user.displayName,
+			avatar : 'university-triangle2.jpg',
+			email  : user.email,
+		};
+	}
+
 	getUsers(): Observable<any> {
 		return this.api.getAll(this.path, null);
 	}
