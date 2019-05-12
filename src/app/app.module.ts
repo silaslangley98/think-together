@@ -14,27 +14,27 @@ import { environment } from '../environments/environment';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material.module';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { HomeLayoutModule } from './home-layout/home-layout.module';
+import { LoginLayoutModule } from './login-layout/login-layout.module';
 import { QuestionAnswerModule } from './question-answer/question-answer.module';
 import { SharedModule } from './shared/components/shared-component.module';
-
-import { NavComponent } from './nav/nav.component';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		NavComponent,
-		HeaderComponent,
 	],
 	imports: [
 		BrowserModule,
 		AuthenticationModule,
+		HomeLayoutModule,
+		LoginLayoutModule,
 		QuestionAnswerModule,
 		SharedModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
+		AngularFireAuthModule,
 		LayoutModule,
 		MaterialModule,
 	],
