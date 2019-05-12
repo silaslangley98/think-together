@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../authentication/auth.service';
 import { UsersService } from '../shared/services/users.service';
 
 import { User } from '../shared/classes/User';
@@ -14,7 +13,7 @@ import { User } from '../shared/classes/User';
 export class HomeLayoutComponent implements OnInit {
 	public currentUser: User;
 
-	constructor(public auth: AuthService, private users: UsersService) {}
+	constructor(private users: UsersService) {}
 
 	ngOnInit() {
 		this.currentUser = this.users.getCurrentUser();
