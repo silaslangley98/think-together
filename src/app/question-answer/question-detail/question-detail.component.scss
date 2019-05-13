@@ -1,14 +1,25 @@
 @import '../../../styles.scss';
 
+$primary: map-get($think-together-theme, primary);
+
 .question-detail {
 	position: relative;
 	overflow: visible;
-	margin: 20px auto;
+	border-radius: 4px;
 	padding: 0;
 }
 
+.top-gap {
+	margin: 20px auto;
+}
+
+.question-detail-header {
+	background-color: mat-color($primary, darker);
+	color: #fff;
+}
+
 .card-header-divider {
-	border-top-width: 2px;
+	border-top-width: 5px;
 }
 
 .question-detail-content {

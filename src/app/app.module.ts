@@ -5,36 +5,38 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material.module';
+import { HomeLayoutModule } from './home-layout/home-layout.module';
+import { LoginLayoutModule } from './login-layout/login-layout.module';
 import { QuestionAnswerModule } from './question-answer/question-answer.module';
 import { SharedModule } from './shared/components/shared-component.module';
-
-import { NavComponent } from './nav/nav.component';
-import { HeaderComponent } from './header/header.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		NavComponent,
-		HeaderComponent,
 	],
 	imports: [
 		BrowserModule,
+		HomeLayoutModule,
+		LoginLayoutModule,
 		QuestionAnswerModule,
 		SharedModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
+		AngularFireAuthModule,
 		LayoutModule,
 		MaterialModule,
 	],
-	providers: [],
+	providers: [AngularFireAuth],
 	bootstrap: [AppComponent],
 })
 
