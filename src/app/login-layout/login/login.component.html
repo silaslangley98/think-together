@@ -29,7 +29,8 @@
 			<button
 				mat-raised-button
 				class="btn-submit"
-				color="accent">
+				color="accent"
+				[disabled]="this.loginForm.invalid">
 				LOGIN
 			</button>
 		</div>
