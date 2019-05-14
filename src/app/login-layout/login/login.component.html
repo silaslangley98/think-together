@@ -24,6 +24,9 @@
 					</mat-error>
 				</mat-error>
 			</mat-form-field>
+			<mat-error class="failed-login-message" *ngIf="loginResponse">
+				{{ loginResponse }}
+			</mat-error>
 		</div>
 		<div mat-dialog-actions fxLayoutAlign="end">
 			<button

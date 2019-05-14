@@ -13,6 +13,8 @@ import { VALIDATORS } from '../../shared/constants/validators';
 })
 
 export class LoginComponent implements OnInit {
+	loginResponse:string = '';
+
 	constructor(private auth: AuthService) { }
 
 	loginForm = new FormGroup({
@@ -28,8 +30,8 @@ export class LoginComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	login() {
-		this.auth.login(this.loginForm.value);
+	async login() {
+		this.loginResponse = await this.auth.login(this.loginForm.value);
 	}
 
 	public hasError(controlName: string, errorName: string) {
