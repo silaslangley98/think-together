@@ -7,12 +7,22 @@
 					matInput
 					placeholder="Enter your username"
 					formControlName="email">
+				<mat-error *ngFor="let validator of getValidators('email')">
+					<mat-error *ngIf="hasError('email', validator.errorName)">
+						{{ validator.message }}
+					</mat-error>
+				</mat-error>
 			</mat-form-field>
 			<mat-form-field class="login-form-field">
 				<input
 					matInput
 					placeholder="Enter your password"
 					formControlName="password">
+				<mat-error *ngFor="let validator of getValidators('password')">
+					<mat-error *ngIf="hasError('password', validator.errorName)">
+						{{ validator.message }}
+					</mat-error>
+				</mat-error>
 			</mat-form-field>
 		</div>
 		<div mat-dialog-actions fxLayoutAlign="end">
