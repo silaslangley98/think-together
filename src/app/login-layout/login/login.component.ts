@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { AuthService } from '../../shared/services/auth.service';
+import { LoginService } from '../login.service';
 
 import { VALIDATORS } from '../../shared/constants/validators';
 
@@ -15,16 +16,11 @@ import { VALIDATORS } from '../../shared/constants/validators';
 export class LoginComponent implements OnInit {
 	loginResponse:string = '';
 
-	constructor(private auth: AuthService) { }
+	constructor(private auth: AuthService, private loginService: LoginService) { }
 
 	loginForm = new FormGroup({
-		email    : new FormControl('', [ Validators.required, Validators.email ]),
-		password : new FormControl('', [ Validators.compose([
-				Validators.minLength(6),
-		 		Validators.required,
-		 		Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),
-			])
-		])
+		email    : new FormControl('', this.loginService.getEmailValidators()),
+		password : new FormControl('', this.loginService.getPasswordValidators()),
 	});
 
 	ngOnInit() {
@@ -38,7 +34,7 @@ export class LoginComponent implements OnInit {
 		return this.loginForm.controls[controlName].hasError(errorName);
 	}
 
-	public getValidators(inputType) {
-		return VALIDATORS[inputType];
+	public getValidators(inputType:string) {
+		return this.loginService.getValidators(inputType);
 	}
 }
