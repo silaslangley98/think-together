@@ -60,6 +60,8 @@ export class AuthService {
 
 			await this.login(loginCredentials);
 
+			this.users.add();
+
 			this.router.navigate(['home']);
 
 		} catch(error) {

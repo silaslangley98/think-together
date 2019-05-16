@@ -23,6 +23,8 @@ export class UsersService {
 
 	getCurrentUser() {
 		return this.currentUser;
+	public add() {
+		this.api.add(this.path, this.currentUser);
 	}
 
 	setCurrentUser(user) {
