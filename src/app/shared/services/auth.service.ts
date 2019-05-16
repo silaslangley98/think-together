@@ -37,15 +37,13 @@ export class AuthService {
 		})
 	}
 
-	async login(loginCredentials : LoginCredentials) {
+	async login(loginCredentials: LoginCredentials) {
 		try {
 			await this.firebaseAuth.auth
 				.signInWithEmailAndPassword(loginCredentials.email, loginCredentials.password);
 
-			const user = this.firebaseAuth.auth.currentUser;
-			this.users.setCurrentUser(user);
-
 			this.router.navigate(['home']);
+
 		} catch (error) {
 			console.log("Error!"  +  error.message);
 
@@ -60,9 +58,14 @@ export class AuthService {
 			await this.firebaseAuth.auth
 				.createUserWithEmailAndPassword(loginCredentials.email, loginCredentials.password)
 
+			await this.login(loginCredentials);
+
 			this.router.navigate(['home']);
+
 		} catch(error) {
 			console.log('Error! ' + error.message);
+
+			return error.message;
  		}
 	}
 
