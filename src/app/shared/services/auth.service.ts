@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { auth } from  'firebase/app';
 import { AngularFireAuth } from  "@angular/fire/auth";
-import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { Router } from  "@angular/router";
 
@@ -73,5 +70,13 @@ export class AuthService {
 
 	isLoggedIn() {
 		return this.firebaseAuth.authState.pipe(first()).toPromise();
+	}
+
+	async logout() {
+		await this.firebaseAuth.auth.signOut();
+
+		this.users.removeCurrentUser();
+
+		this.router.navigate(['login']);
 	}
 }
