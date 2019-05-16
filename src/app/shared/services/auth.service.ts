@@ -48,6 +48,8 @@ export class AuthService {
 			this.router.navigate(['home']);
 		} catch (error) {
 			console.log("Error!"  +  error.message);
+
+			return error.message;
 		}
 	}
 

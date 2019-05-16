@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { AuthService } from '../../shared/services/auth.service';
+import { LoginService } from '../login.service';
 
 @Component({
 	selector: 'app-login',
@@ -11,17 +12,27 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 
 export class LoginComponent implements OnInit {
-	constructor(private auth: AuthService) { }
+	loginResponse:string = '';
+
+	constructor(private auth: AuthService, private loginService: LoginService) { }
 
 	loginForm = new FormGroup({
-		email    : new FormControl(''),
-		password : new FormControl(''),
+		email    : new FormControl('', this.loginService.getEmailValidators()),
+		password : new FormControl('', this.loginService.getPasswordValidators()),
 	});
 
 	ngOnInit() {
 	}
 
-	login() {
-		this.auth.login(this.loginForm.value);
+	async login() {
+		this.loginResponse = await this.auth.login(this.loginForm.value);
+	}
+
+	public hasError(controlName: string, errorName: string) {
+		return this.loginForm.controls[controlName].hasError(errorName);
+	}
+
+	public getValidators(inputType:string) {
+		return this.loginService.getValidators(inputType);
 	}
 }
