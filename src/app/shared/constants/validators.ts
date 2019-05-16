@@ -1,4 +1,11 @@
 export const VALIDATORS = {
+	name : [
+		{
+			errorName : 'required',
+			message   : 'Name is required.',
+		},
+	],
+
 	email : [
 		{
 			errorName : 'required',
@@ -22,6 +29,17 @@ export const VALIDATORS = {
 		{
 			errorName : 'pattern',
 			message   : 'Password must contain numbers, uppercase letters and lowercase letters.',
+		},
+	],
+
+	confirmPassword : [
+		{
+			errorName : 'required',
+			message   : 'Password is required.',
+		},
+		{
+			errorName : 'noMatch',
+			message   : 'Passwords do not match.',
 		},
 	],
 };

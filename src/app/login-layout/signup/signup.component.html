@@ -1,12 +1,17 @@
 <mat-card class="signup" fxFlex="50%" fxFlex.lt-sm="100%">
 	<mat-card-title>Sign up</mat-card-title>
-	<form [formGroup]="signupForm" (ngSubmit)="signup()">
+	<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
 		<div mat-dialog-content>
 			<mat-form-field class="signup-form-field">
 				<input
 					matInput
 					placeholder="Enter your name"
 					formControlName="name">
+					<mat-error *ngFor="let validator of getValidators('name')">
+						<mat-error *ngIf="hasError('name', validator.errorName)">
+							{{ validator.message }}
+						</mat-error>
+					</mat-error>
 			</mat-form-field>
 			<mat-form-field class="signup-form-field">
 				<input
@@ -35,6 +40,11 @@
 					matInput
 					placeholder="Confirm your password"
 					formControlName="confirmPassword">
+					<mat-error *ngFor="let validator of getValidators('confirmPassword')">
+						<mat-error *ngIf="hasPasswordMatchError('confirmPassword', validator.errorName)">
+							{{ validator.message }}
+						</mat-error>
+					</mat-error>
 			</mat-form-field>
 		</div>
 		<div mat-dialog-actions fxLayoutAlign="end">
