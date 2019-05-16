@@ -6,37 +6,40 @@ import { ApiService } from '../../shared/services/api.service';
 import { User } from '../classes/User';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn : 'root'
 })
 
 export class UsersService {
-	path: string = '/users';
-
-	currentUser: User = {
-		id     : '1',
-		name   : 'Silas Langley',
-		avatar : 'university-triangle2.jpg',
-		email  : 'silaslangley@somewhere.com',
-	};
+	path : string = '/users';
+	currentUser : User;
 
 	constructor(private api: ApiService) { }
 
-	getCurrentUser() {
-		return this.currentUser;
 	public add() {
 		this.api.add(this.path, this.currentUser);
 	}
 
-	setCurrentUser(user) {
+	public getCurrentUser() {
+		return this.currentUser || JSON.parse(localStorage.getItem('currentUser')) || null;
+	}
+
+	public setCurrentUser(user) {
 		this.currentUser = {
 			id     : user.uid,
 			name   : user.displayName,
 			avatar : 'university-triangle2.jpg',
 			email  : user.email,
 		};
+
+		localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
 	}
 
-	getUsers(): Observable<any> {
+	public removeCurrentUser() {
+		this.currentUser = null;
+		localStorage.removeItem('currentUser');
+	}
+
+	public getUsers(): Observable<any> {
 		return this.api.getAll(this.path, null);
 	}
 }
