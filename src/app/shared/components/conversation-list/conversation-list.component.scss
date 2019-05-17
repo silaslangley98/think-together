@@ -1,8 +1,12 @@
 .conversation-list {
 	position: relative;
 	overflow: visible;
-	margin: 20px auto;
-	padding: 0 16px;
+	margin: -49px auto;
+	padding: 0;
+
+	.conversation-list-header {
+		height: 50px;
+	}
 
 	.mat-list {
 		padding-top: 0;

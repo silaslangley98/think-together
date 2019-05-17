@@ -4,22 +4,17 @@ $primary: map-get($think-together-theme, primary);
 
 .question-detail {
 	position: relative;
-	overflow: visible;
 	border-radius: 4px;
 	padding: 0;
+	overflow: visible;
 }
 
 .top-gap {
-	margin: 20px auto;
+	margin: -50px auto;
 }
 
 .question-detail-header {
-	background-color: mat-color($primary, darker);
-	color: #fff;
-}
-
-.card-header-divider {
-	border-top-width: 5px;
+	background-color: mat-color($accent);
 }
 
 .question-detail-content {
