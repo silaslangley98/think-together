@@ -1,3 +1,7 @@
 .btn-header {
 	padding: 0;
+
+	&:hover {
+		opacity: 1;
+	}
 }
