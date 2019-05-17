@@ -1,19 +1,22 @@
-<mat-toolbar color="primary" class="elevated">
-	<button
-		type="button"
-		aria-label="Toggle sidenav"
-		mat-icon-button
-		(click)="toggleDrawer()"
-		*ngIf="isHandset$ | async">
+<mat-toolbar color="primary" class="elevated home-header">
+	<mat-toolbar-row>
+		<button
+			type="button"
+			aria-label="Toggle sidenav"
+			mat-icon-button
+			(click)="toggleDrawer()"
+			*ngIf="isHandset$ | async">
 
-		<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-	</button>
-	<span class="header-title">Think Together</span>
-	<span class="spacer"></span>
-	<button mat-icon-button [matMenuTriggerFor]="headerMenu">
-		<mat-icon class="header-menu-icon">more_vert</mat-icon>
-	</button>
-	<mat-menu #headerMenu="matMenu">
-		<button mat-menu-item (click)="logout()">Logout</button>
-	</mat-menu>
+			<mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+		</button>
+		<span class="header-title">Think Together</span>
+		<span class="spacer"></span>
+		<button mat-icon-button [matMenuTriggerFor]="headerMenu">
+			<mat-icon class="header-menu-icon">more_vert</mat-icon>
+		</button>
+		<mat-menu #headerMenu="matMenu">
+			<button mat-menu-item (click)="logout()">Logout</button>
+		</mat-menu>
+	</mat-toolbar-row>
+	<mat-toolbar-row fxHide="true" fxShow.gt-sm></mat-toolbar-row>
 </mat-toolbar>
