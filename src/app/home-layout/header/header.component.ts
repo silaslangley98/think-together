@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { AuthService } from '../../shared/services/auth.service';
+
 @Component({
 	selector    : 'app-header',
 	templateUrl : './header.component.html',
@@ -15,7 +17,7 @@ export class HeaderComponent implements OnInit {
 			map(result => result.matches)
 		);
 
-	constructor(private breakpointObserver: BreakpointObserver) {}
+	constructor(private auth: AuthService, private breakpointObserver: BreakpointObserver) {}
 
 	@Output() toggledDrawer = new EventEmitter<boolean>();
 
@@ -24,5 +26,9 @@ export class HeaderComponent implements OnInit {
 
 	public toggleDrawer():void {
 		this.toggledDrawer.emit();
+	}
+
+	public logout() {
+		this.auth.logout();
 	}
 }

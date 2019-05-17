@@ -46,6 +46,9 @@
 						</mat-error>
 					</mat-error>
 			</mat-form-field>
+			<mat-error class="failed-signup-message" *ngIf="signupResponse">
+				{{ signupResponse }}
+			</mat-error>
 		</div>
 		<div mat-dialog-actions fxLayoutAlign="end">
 			<button

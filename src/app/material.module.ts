@@ -10,6 +10,7 @@ import {
 	MatIconModule,
 	MatInputModule,
 	MatListModule,
+	MatMenuModule,
 	MatSidenavModule,
 	MatToolbarModule
 } from '@angular/material';
@@ -27,6 +28,7 @@ import {
 		MatIconModule,
 		MatInputModule,
 		MatListModule,
+		MatMenuModule,
 		MatSidenavModule,
 		MatToolbarModule,
 	],

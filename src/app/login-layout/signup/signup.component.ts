@@ -12,6 +12,7 @@ import { LoginService } from '../login.service';
 })
 
 export class SignupComponent implements OnInit {
+	signupResponse:string = '';
 	signupForm: FormGroup;
 
 	constructor(
@@ -29,10 +30,10 @@ export class SignupComponent implements OnInit {
 		}, { validator : this.loginService.doPasswordsMatch });
 	}
 
-	signup() {
+	async signup() {
 		const { confirmPassword, name, ...signupCredentials } = this.signupForm.value;
 
-		this.auth.signup(signupCredentials, name);
+		this.signupResponse = await this.auth.signup(signupCredentials, name);
 	}
 
 	public hasError(controlName: string, errorName: string) {

@@ -4,4 +4,8 @@
 
 .header-menu-icon {
 	padding: 0 14px;
+
+	&:hover {
+		opacity: .6;
+	}
 }
