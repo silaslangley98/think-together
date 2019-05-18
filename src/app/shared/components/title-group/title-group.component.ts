@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class TitleGroupComponent implements OnInit {
-	@Input() avatar: string;
+	@Input() email: string;
 	@Input() name: string;
 
 	constructor() { }
