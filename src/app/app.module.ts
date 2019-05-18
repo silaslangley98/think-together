@@ -1,22 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AvatarModule } from 'ng2-avatar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { environment } from '../environments/environment';
-
 import { LayoutModule } from '@angular/cdk/layout';
-import { MaterialModule } from './material.module';
-import { HomeLayoutModule } from './home-layout/home-layout.module';
+
+import { AppRoutingModule } from './app-routing.module';
 import { LoginLayoutModule } from './login-layout/login-layout.module';
+import { MaterialModule } from './material.module';
 import { QuestionAnswerModule } from './question-answer/question-answer.module';
 import { SharedModule } from './shared/components/shared-component.module';
+
+import { AppComponent } from './app.component';
 
 @NgModule({
 	declarations: [
@@ -24,17 +25,18 @@ import { SharedModule } from './shared/components/shared-component.module';
 	],
 	imports: [
 		BrowserModule,
-		HomeLayoutModule,
-		LoginLayoutModule,
-		QuestionAnswerModule,
-		SharedModule,
-		AppRoutingModule,
-		BrowserAnimationsModule,
 		AngularFireModule.initializeApp(environment.firebase),
 		AngularFirestoreModule,
 		AngularFireAuthModule,
+		AvatarModule.forRoot(),
+		BrowserAnimationsModule,
+
+		AppRoutingModule,
 		LayoutModule,
+		LoginLayoutModule,
 		MaterialModule,
+		QuestionAnswerModule,
+		SharedModule,
 	],
 	providers: [AngularFireAuth],
 	bootstrap: [AppComponent],

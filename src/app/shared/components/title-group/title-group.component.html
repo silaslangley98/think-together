@@ -1,9 +1,11 @@
 <div class="title-group">
-	<img
+	<avatar
 		class="title-group-avatar"
-		src="../../../assets/images/{{ avatar }}"
-		alt="Avatar for {{ name }}">
-
+		[email]="email"
+		[name]="name"
+		[displayType]="'circle'"
+		[size]="50">
+	</avatar>
 	<div class="title-group-content">
 		<ng-content select=".title-group-header"></ng-content>
 		<ng-content select=".title-group-subheader"></ng-content>

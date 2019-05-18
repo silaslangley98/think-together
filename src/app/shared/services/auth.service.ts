@@ -26,7 +26,7 @@ export class AuthService {
 			if (loggedInUser) {
 				const user = this.firebaseAuth.auth.currentUser;
 
-				user.updateProfile({ displayName : this.name })
+				user.updateProfile({ displayName : this.name, photoURL: '' })
 					.then(() => {
 						this.users.setCurrentUser(user);
 					});
