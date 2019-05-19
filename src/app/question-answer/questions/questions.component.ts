@@ -24,15 +24,15 @@ export class QuestionsComponent implements OnInit {
 		this.getQuestions();
 	}
 
-	trackByQuestionId({}, question: Question): string {
+	public trackByQuestionId({}, question: Question): string {
 		return question.id;
 	}
 
-	selectQuestion(question):void {
+	public selectQuestion(question):void {
 		this.questionService.selectQuestion(question);
 	}
 
-	openAddQuestionDialog(): void {
+	public openAddQuestionDialog(): void {
 		const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
 			minWidth : '250px',
 			width    : '50%',

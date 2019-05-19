@@ -33,7 +33,7 @@ export class QuestionDetailComponent implements OnInit {
 		this.answers$ = this.answerService.getAnswers(this.question.id);
 	}
 
-	trackByAnswerId({}, answer: any): string {
+	public trackByAnswerId({}, answer: any): string {
 		return answer.id;
 	}
 

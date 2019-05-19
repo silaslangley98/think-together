@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
 		this.toggledDrawer.emit();
 	}
 
-	public logout() {
+	public logout():void {
 		this.auth.logout();
 	}
 }
