@@ -39,8 +39,6 @@ export class AuthService {
 			await this.firebaseAuth.auth
 				.signInWithEmailAndPassword(loginCredentials.email, loginCredentials.password);
 
-			this.router.navigate(['home']);
-
 		} catch (error) {
 			console.log("Error!"  +  error.message);
 
@@ -58,8 +56,6 @@ export class AuthService {
 			await this.login(loginCredentials);
 
 			this.users.add();
-
-			this.router.navigate(['home']);
 
 		} catch(error) {
 			console.log('Error! ' + error.message);

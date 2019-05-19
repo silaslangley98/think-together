@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Router } from  "@angular/router";
 
 import { ApiService } from '../../shared/services/api.service';
 
@@ -13,7 +14,7 @@ export class UsersService {
 	path : string = '/users';
 	currentUser : User;
 
-	constructor(private api: ApiService) { }
+	constructor(private api: ApiService, private router: Router,) { }
 
 	public add() {
 		this.api.add(this.path, this.currentUser);
@@ -32,6 +33,8 @@ export class UsersService {
 		};
 
 		localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+
+		this.router.navigate(['home']);
 	}
 
 	public removeCurrentUser() {
