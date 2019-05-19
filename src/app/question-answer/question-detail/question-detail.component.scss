@@ -14,7 +14,7 @@ $primary: map-get($think-together-theme, primary);
 }
 
 .question-detail-header {
-	background-color: mat-color($accent);
+	background-color: $background-darker;
 }
 
 .question-detail-content {

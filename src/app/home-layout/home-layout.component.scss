@@ -47,10 +47,10 @@ $primary: map-get($think-together-theme, primary);
 	height: 50px;
 
 	&:hover, &:focus {
-		background-color: $hover-background;
+		background-color: $background-darker;
 	}
 }
 
 .active {
-	background-color: $hover-background;
+	background-color: $background-darker;
 }

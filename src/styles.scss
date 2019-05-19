@@ -28,7 +28,7 @@ $think-together-theme: mat-light-theme($think-together-primary, $think-together-
 
 $background: map-get($think-together-theme, background);
 $foreground: map-get($think-together-theme, foreground);
-$hover-background: mat-color($background, hover, .1);
+$background-darker: mat-color($background, hover, .1);
 $text-color: mat-color($foreground, text);
 $text-color-lighter: mat-color($foreground, text, .6);
 
@@ -63,5 +63,5 @@ body {
 }
 
 .btn-cancel:hover {
-	background-color: $hover-background;
+	background-color: $background-darker;
 }
