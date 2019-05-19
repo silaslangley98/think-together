@@ -32,14 +32,14 @@ export class UsersService {
 			email  : user.email,
 		};
 
-		localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+		sessionStorage.setItem('currentUser', JSON.stringify(this.currentUser));
 
 		this.router.navigate(['home']);
 	}
 
 	public removeCurrentUser() {
 		this.currentUser = null;
-		localStorage.removeItem('currentUser');
+		sessionStorage.removeItem('currentUser');
 	}
 
 	public getUsers(): Observable<any> {

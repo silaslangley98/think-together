@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from  "@angular/fire/auth";
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from  '@angular/fire/auth';
 import { first } from 'rxjs/operators';
-import { Router } from  "@angular/router";
+import { Router } from  '@angular/router';
 
 import { UsersService } from './users.service';
 
@@ -24,6 +25,8 @@ export class AuthService {
 	) {
 		this.firebaseAuth.authState.subscribe(loggedInUser => {
 			if (loggedInUser) {
+				this.firebaseAuth.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
+
 				const user = this.firebaseAuth.auth.currentUser;
 
 				user.updateProfile({ displayName : this.name, photoURL: '' })
