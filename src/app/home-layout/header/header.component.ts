@@ -17,7 +17,10 @@ export class HeaderComponent implements OnInit {
 			map(result => result.matches)
 		);
 
-	constructor(private auth: AuthService, private breakpointObserver: BreakpointObserver) {}
+	constructor(
+		private auth: AuthService,
+		private breakpointObserver: BreakpointObserver,
+	) {}
 
 	@Output() toggledDrawer = new EventEmitter<boolean>();
 
