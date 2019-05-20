@@ -21,6 +21,10 @@ const routes: Routes = [
 				path: 'questions/question/:id',
 				loadChildren: '../question-answer/question-answer.module#QuestionAnswerModule',
 			},
+			{
+				path: 'profile',
+				loadChildren: '../profile-settings/profile-settings.module#ProfileSettingsModule',
+			},
 		],
 	},
 ];
