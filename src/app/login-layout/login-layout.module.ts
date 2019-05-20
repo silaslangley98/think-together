@@ -10,7 +10,6 @@ import { LoginLayoutComponent } from './login-layout.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
-
 @NgModule({
 	declarations: [
 		LoginHeaderComponent,

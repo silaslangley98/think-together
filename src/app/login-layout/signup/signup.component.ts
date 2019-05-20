@@ -14,12 +14,17 @@ import { LoginService } from '../login.service';
 export class SignupComponent implements OnInit {
 	signupResponse:string = '';
 	signupForm: FormGroup;
+	showPassword:boolean;
+	showConfirmPassword:boolean;
 
 	constructor(
 		private auth: AuthService,
 		private loginService: LoginService,
 		private formBuilder: FormBuilder
-	) {}
+	) {
+		this.showPassword = false;
+		this.showConfirmPassword = false;
+	}
 
 	ngOnInit() {
 		this.signupForm = this.formBuilder.group({
