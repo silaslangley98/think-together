@@ -1,7 +1,7 @@
 <mat-card class="signup" fxFlex="50%" fxFlex.lt-sm="100%">
 	<mat-card-title>Sign up</mat-card-title>
 	<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
-		<div mat-dialog-content>
+		<mat-card-content>
 			<mat-form-field class="signup-form-field">
 				<input
 					matInput
@@ -63,8 +63,8 @@
 			<mat-error class="failed-signup-message" *ngIf="signupResponse">
 				{{ signupResponse }}
 			</mat-error>
-		</div>
-		<div mat-dialog-actions fxLayoutAlign="end">
+		</mat-card-content>
+		<div mat-card-actions fxLayoutAlign="end">
 			<button
 				mat-raised-button
 				class="btn-submit"
