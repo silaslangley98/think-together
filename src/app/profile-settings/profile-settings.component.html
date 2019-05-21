@@ -1,3 +1,41 @@
-<p>
-  profile-settings works!
-</p>
+<mat-card class="profile-settings" fxFlex="60%" fxFlex.lt-sm="100%">
+	<mat-card-title>Update Profile</mat-card-title>
+	<form [formGroup]="updateProfileForm">
+		<mat-card-content>
+			<mat-form-field class="profile-form-field">
+				<mat-label>Name</mat-label>
+				<input
+					type="text"
+					matInput
+					placeholder="{{ currentUser.name }}"
+					formControlName="name">
+				<mat-icon matSuffix class="pointer">mode_edit</mat-icon>
+			</mat-form-field>
+			<mat-form-field class="profile-form-field">
+				<mat-label>Email</mat-label>
+				<input
+					type="text"
+					matInput
+					placeholder="{{ currentUser.email }}"
+					formControlName="email">
+				<mat-icon matSuffix class="pointer">mode_edit</mat-icon>
+			</mat-form-field>
+
+			<div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+				Just drag and drop files here
+			</div>
+			<div style="width: 500px">
+				<mat-file-upload-queue
+					#fileUploadQueue
+					[fileAlias]="'file'"
+					multiple>
+					<mat-file-upload
+						[file]="file"
+						[id]="i"
+						*ngFor="let file of fileUploadQueue.files; let i = index">
+					</mat-file-upload>
+				</mat-file-upload-queue>
+			</div>
+		</mat-card-content>
+	</form>
+</mat-card>
