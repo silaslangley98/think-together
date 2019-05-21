@@ -16,6 +16,9 @@
 		</button>
 		<mat-menu #headerMenu="matMenu">
 			<button mat-menu-item (click)="logout()">Logout</button>
+			<a mat-menu-item [routerLink]="['profile']" routerLinkActive="active">
+				Profile Settings
+			</a>
 		</mat-menu>
 	</mat-toolbar-row>
 	<mat-toolbar-row fxHide="true" fxShow.gt-sm></mat-toolbar-row>

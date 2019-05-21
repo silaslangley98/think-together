@@ -1,7 +1,7 @@
 <mat-card class="login" fxFlex="50%" fxFlex.lt-sm="100%">
 	<mat-card-title>Login</mat-card-title>
 	<form [formGroup]="loginForm" (ngSubmit)="login()">
-		<div mat-dialog-content>
+		<mat-card-content>
 			<mat-form-field class="login-form-field">
 				<input
 					matInput
@@ -17,7 +17,14 @@
 				<input
 					matInput
 					placeholder="Enter your password"
-					formControlName="password">
+					formControlName="password"
+					[type]="showPassword ? 'text' : 'password'">
+				<mat-icon
+					matSuffix
+					class="pointer"
+					(click)="showPassword = !showPassword">
+					{{ showPassword ? 'visibility' : 'visibility_off' }}
+				</mat-icon>
 				<mat-error *ngFor="let validator of getValidators('password')">
 					<mat-error *ngIf="hasError('password', validator.errorName)">
 						{{ validator.message }}
@@ -27,8 +34,8 @@
 			<mat-error class="failed-login-message" *ngIf="loginResponse">
 				{{ loginResponse }}
 			</mat-error>
-		</div>
-		<div mat-dialog-actions fxLayoutAlign="end">
+		</mat-card-content>
+		<div mat-card-actions fxLayoutAlign="end">
 			<button
 				mat-raised-button
 				class="btn-submit"

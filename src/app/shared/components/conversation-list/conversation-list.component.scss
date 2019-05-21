@@ -1,3 +1,5 @@
+@import '../../../../styles.scss';
+
 .conversation-list {
 	position: relative;
 	overflow: visible;
@@ -6,6 +8,7 @@
 
 	.conversation-list-header {
 		height: 50px;
+		background-color: $background-darker;
 	}
 
 	.mat-list {

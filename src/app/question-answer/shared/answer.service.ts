@@ -22,7 +22,7 @@ export class AnswerService {
 		private users: UsersService,
 	) { }
 
-	public getAnswers(question_id): Observable<any> {
+	public getAnswers(question_id:string): Observable<any> {
 		const filter = {
 			key   : "question_id",
 			value : question_id,
@@ -32,7 +32,7 @@ export class AnswerService {
 			.pipe(map(answers => answers.sort(this.sortByPostedDate)));
 	}
 
-	public addAnswer(message, question_id): void {
+	public addAnswer(message:string, question_id:string): void {
 		this.answer = {
 			message,
 			question_id,
@@ -44,7 +44,7 @@ export class AnswerService {
 		this.api.add(this.path, this.answer);
 	}
 
-	private sortByPostedDate(first, second) {
+	private sortByPostedDate(first:Answer, second:Answer):number {
 		if (first.posted < second.posted) return -1;
 
 		if (first.posted > second.posted) return 1;

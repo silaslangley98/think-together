@@ -13,8 +13,11 @@ import { LoginService } from '../login.service';
 
 export class LoginComponent implements OnInit {
 	loginResponse:string = '';
+	showPassword:boolean;
 
-	constructor(private auth: AuthService, private loginService: LoginService) { }
+	constructor(private auth: AuthService, private loginService: LoginService) {
+		this.showPassword = false;
+	}
 
 	loginForm = new FormGroup({
 		email    : new FormControl('', this.loginService.getEmailValidators()),

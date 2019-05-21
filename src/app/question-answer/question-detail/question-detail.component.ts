@@ -25,19 +25,19 @@ export class QuestionDetailComponent implements OnInit {
 		this.getAnswers();
 	}
 
-	getQuestion():void {
+	public getQuestion():void {
 		this.question = this.questionService.getQuestion();
 	}
 
-	getAnswers():void {
+	public getAnswers():void {
 		this.answers$ = this.answerService.getAnswers(this.question.id);
 	}
 
-	trackByAnswerId({}, answer: any): string {
+	public trackByAnswerId({}, answer: any): string {
 		return answer.id;
 	}
 
-	addAnswer(message: string) {
+	public addAnswer(message: string) {
 		this.answerService.addAnswer(message, this.question.id);
 	}
 }

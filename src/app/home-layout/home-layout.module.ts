@@ -5,6 +5,7 @@ import { MaterialModule } from '../material.module';
 import { RouterModule } from '@angular/router';
 
 import { HomeLayoutRoutingModule } from './home-layout-routing.module';
+import { ProfileSettingsModule } from '../profile-settings/profile-settings.module';
 import { QuestionAnswerModule } from '../question-answer/question-answer.module';
 import { SharedModule } from '../shared/components/shared-component.module';
 
@@ -19,6 +20,7 @@ import { HomeLayoutComponent } from './home-layout.component';
 		MaterialModule,
 		RouterModule,
 		HomeLayoutRoutingModule,
+		ProfileSettingsModule,
 		QuestionAnswerModule,
 		SharedModule,
 	]
