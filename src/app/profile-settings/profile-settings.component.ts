@@ -16,7 +16,8 @@ import { User } from '../shared/classes/User';
 export class ProfileSettingsComponent implements OnInit {
 	updateProfileForm: FormGroup;
 	currentUser: User;
-	selectedFile: File;
+	updatedAvatar: File;
+	avatarSource:any;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -27,7 +28,15 @@ export class ProfileSettingsComponent implements OnInit {
 	}
 
 	onFileChanged(event) {
-		this.selectedFile = event.target.files[0]
+		this.updatedAvatar = event.target.files[0];
+
+		const reader = new FileReader();
+
+		reader.onload = () => {
+			this.avatarSource = reader.result;
+		};
+
+		reader.readAsDataURL(this.updatedAvatar);
 	}
 
 	ngOnInit() {

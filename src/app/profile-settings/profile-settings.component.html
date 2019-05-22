@@ -1,7 +1,7 @@
 <mat-card class="profile-settings" fxFlex="60%" fxFlex.lt-sm="100%">
 	<mat-card-title>Update Profile</mat-card-title>
-	<form [formGroup]="updateProfileForm">
-		<mat-card-content>
+	<mat-card-content>
+		<form [formGroup]="updateProfileForm">
 			<mat-form-field class="profile-form-field">
 				<mat-label>Name</mat-label>
 				<input
@@ -20,21 +20,6 @@
 					formControlName="email">
 				<mat-icon matSuffix class="pointer">mode_edit</mat-icon>
 			</mat-form-field>
-
-			<div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
-				Just drag and drop files here
-			</div>
-			<div style="width: 500px">
-				<mat-file-upload-queue
-					#fileUploadQueue
-					[fileAlias]="'file'"
-					multiple>
-					<mat-file-upload
-						[file]="file"
-						[id]="i"
-						*ngFor="let file of fileUploadQueue.files; let i = index">
-					</mat-file-upload>
-				</mat-file-upload-queue>
 			<div fxLayoutAlign="end">
 				<button
 					mat-raised-button
@@ -44,6 +29,49 @@
 					SAVE
 				</button>
 			</div>
-		</mat-card-content>
-	</form>
+		</form>
+
+		<h3>Update Avatar</h3>
+		<mat-list>
+			<mat-list-item>
+				<p class="avatar-label">Current Avatar:</p>
+				<avatar
+					[email]="currentUser.email"
+					[name]="currentUser.name"
+					[displayType]="'circle'"
+					[size]="50">
+				</avatar>
+			</mat-list-item>
+			<mat-list-item>
+				<button
+					mat-raised-button
+					class="btn-submit"
+					color="accent"
+					(click)="fileInput.click()">
+					SELECT IMAGE
+				</button>
+				<input
+					hidden
+					type="file"
+					#fileInput
+					accept="image/*"
+					(change)="onFileChanged($event)">
+			</mat-list-item>
+			<mat-list-item *ngIf="avatarSource">
+				<p class="avatar-label">Avatar Preview:</p>
+				<img
+					class="avatar-preview"
+					*ngIf="avatarSource"
+					[src]="avatarSource" />
+			</mat-list-item>
+			<mat-list-item *ngIf="avatarSource">
+				<button
+					mat-raised-button
+					class="btn-submit"
+					color="accent">
+					SAVE NEW AVATAR
+				</button>
+			</mat-list-item>
+		</mat-list>
+	</mat-card-content>
 </mat-card>
