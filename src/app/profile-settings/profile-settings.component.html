@@ -35,6 +35,14 @@
 						*ngFor="let file of fileUploadQueue.files; let i = index">
 					</mat-file-upload>
 				</mat-file-upload-queue>
+			<div fxLayoutAlign="end">
+				<button
+					mat-raised-button
+					class="btn-submit"
+					color="accent"
+					[disabled]="this.updateProfileForm.invalid">
+					SAVE
+				</button>
 			</div>
 		</mat-card-content>
 	</form>
